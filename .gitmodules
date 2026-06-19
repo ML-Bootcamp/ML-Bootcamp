@@ -1,0 +1,3 @@
+[submodule "mlcon"]
+	path = mlcon
+	url = https://github.com/cfaessler/mlcon.git
