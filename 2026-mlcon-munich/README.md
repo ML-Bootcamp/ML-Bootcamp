@@ -43,8 +43,8 @@ MNIST dataset is downloaded automatically by `torchvision` on first run.
 
 ## How to run the labs
 
-You can run the labs either **locally** or in **Google Colab**. Colab requires no
-installation and is the fastest way to get started.
+You can run the labs **locally**, in **Google Colab**, or with **Docker**. Colab
+requires no installation and is the fastest way to get started.
 
 ### Option 1 — Run locally
 
@@ -106,3 +106,32 @@ GitHub.
 > **Tip:** For faster training in Lab 02, enable a GPU in Colab via
 > *Runtime → Change runtime type → Hardware accelerator → GPU* (optional; the lab
 > runs fine on CPU).
+
+### Option 3 — Run with Docker
+
+A `Dockerfile` is included that installs all dependencies and runs a JupyterLab
+server, so you don't need to manage a local Python environment.
+
+**Prerequisites:** [Docker](https://docs.docker.com/get-docker/) installed and running.
+
+1. Build the image (run from the `2026-mlcon-munich/` directory):
+
+```bash
+docker build -t mlcon26-labs .
+```
+
+2. Run the container, mounting the current directory so notebook changes are
+   saved back to your machine:
+
+```bash
+docker run -it --rm -v "$(pwd)":/app -p 8888:8888 mlcon26-labs
+```
+
+3. Open the JupyterLab URL printed in the terminal (it includes a login token,
+   e.g. `http://127.0.0.1:8888/lab?token=...`) in your browser, then open a
+   notebook in `labs/` and run the cells top to bottom.
+
+> **Tip:** To get an interactive shell inside the container instead of launching
+> JupyterLab directly, append `bash` to the run command and start the server
+> manually with
+> `jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root`.
