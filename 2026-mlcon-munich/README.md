@@ -8,8 +8,23 @@ go. No prior ML experience is required.
 
 | # | Lab | Topic | Notebook |
 |---|-----|-------|----------|
+| 00 | ML Fundamentals | Walk through the core ML concepts (features and labels, train/test splits, hyperparameters, over/underfitting, metrics) on the Iris dataset with scikit-learn. | [`labs/00-ml-fundamentals/lab_ml_fundamentals_guided.ipynb`](labs/00-ml-fundamentals/lab_ml_fundamentals_guided.ipynb) |
 | 01 | Feature Engineering & Visualisation | Explore the Titanic dataset, visualise patterns, train a baseline model, and engineer new features to improve it. | [`labs/01-feature-engineering/lab_features_guided.ipynb`](labs/01-feature-engineering/lab_features_guided.ipynb) |
-| 02 | Deep Learning | Build intuition for how a neural network is defined, trained, and debugged by classifying handwritten MNIST digits with PyTorch. | [`labs/02-deep-learning/lab_mnist_guided.ipynb`](labs/02-deep-learning/lab_mnist_guided.ipynb) |
+| 02 | Classical Methods | Train your first classifier with scikit-learn: fit a decision tree, see how it makes decisions, and use it to predict on unseen data. | [`labs/02-classical-methods/lab_decision_tree_guided.ipynb`](labs/02-classical-methods/lab_decision_tree_guided.ipynb) |
+| 03 | Deep Learning | Build intuition for how a neural network is defined, trained, and debugged by classifying handwritten MNIST digits with PyTorch. | [`labs/03-deep-learning/lab_mnist_guided.ipynb`](labs/03-deep-learning/lab_mnist_guided.ipynb) |
+
+### Lab 00 - ML Fundamentals
+
+Walk through the core machine-learning concepts you need before building models,
+using the classic Iris dataset:
+
+- Features (`X`), labels (`y`), and predictions (`ŷ`)
+- Train / validation / test splits and why shuffling matters
+- Hyperparameter tuning, over/underfitting, and the bias-variance trade-off
+- Confusion matrix and classification metrics (accuracy, precision, recall, F1)
+
+Built with `scikit-learn`, `pandas`, `matplotlib`, and `seaborn`. The dataset is
+included with `scikit-learn`, no download required.
 
 ### Lab 01 - Feature Engineering & Visualisation
 
@@ -24,7 +39,20 @@ Work through a complete ML workflow on the Titanic dataset:
 Built with `pandas`, `seaborn`, `matplotlib`, and `scikit-learn`. The dataset is
 loaded directly via `seaborn`, no download required.
 
-### Lab 02 - Deep Learning
+### Lab 02 - Classical Methods
+
+Train your first classifier with scikit-learn and see how a decision tree makes
+decisions:
+
+1. Load and inspect a small dataset
+2. Visualise the data points
+3. Choose an algorithm and train a model
+4. Use the trained model on new data points
+5. Apply your learnings with a k-NN classifier and a second dataset
+
+Built with `scikit-learn`, `pandas`, and `seaborn`. No download required.
+
+### Lab 03 - Deep Learning
 
 Train a small neural network to recognise handwritten digits and learn how deep
 learning models work in practice:
@@ -51,17 +79,21 @@ requires no installation and is the fastest way to get started.
 No installation needed, just click a link below, then run the cells top to
 bottom. Colab already includes all required packages.
 
+- **Lab 00 - ML Fundamentals:**
+  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/00-ml-fundamentals/lab_ml_fundamentals_guided.ipynb)
 - **Lab 01 - Feature Engineering & Visualisation:**
   [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/01-feature-engineering/lab_features_guided.ipynb)
-- **Lab 02 - Deep Learning:**
-  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/02-deep-learning/lab_mnist_guided.ipynb)
+- **Lab 02 - Classical Methods:**
+  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/02-classical-methods/lab_decision_tree_guided.ipynb)
+- **Lab 03 - Deep Learning:**
+  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/03-deep-learning/lab_mnist_guided.ipynb)
 
 To open any notebook in Colab manually, prefix its GitHub URL with
 `https://colab.research.google.com/github/`. Changes in Colab are not saved back
 to the repository unless you explicitly save a copy to your own Google Drive or
 GitHub.
 
-> **Tip:** For faster training in Lab 02, enable a GPU in Colab via
+> **Tip:** For faster training in Lab 03, enable a GPU in Colab via
 > *Runtime → Change runtime type → Hardware accelerator → GPU* (optional; the lab
 > runs fine on CPU).
 
