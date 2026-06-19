@@ -1,0 +1,13 @@
+# Core
+jupyter
+numpy
+pandas
+matplotlib
+
+# Lab 01 - Feature engineering & visualisation
+seaborn
+scikit-learn
+
+# Lab 02 - Deep learning
+torch
+torchvision
