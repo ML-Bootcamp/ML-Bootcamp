@@ -8,23 +8,46 @@ go. No prior ML experience is required.
 
 | # | Lab | Topic | Notebook |
 |---|-----|-------|----------|
-| 00 | ML Fundamentals | Walk through the core ML concepts (features and labels, train/test splits, hyperparameters, over/underfitting, metrics) on the Iris dataset with scikit-learn. | [`labs/00-ml-fundamentals/lab_ml_fundamentals_guided.ipynb`](labs/00-ml-fundamentals/lab_ml_fundamentals_guided.ipynb) |
+| 00 | ML Fundamentals | Core ML theory for software engineers: splits, hyperparameter tuning (grid and Bayesian search), over/underfitting, and classification metrics on the Iris dataset. | [`labs/00-ml-fundamentals/01_ml_theory_fundamentals.ipynb`](labs/00-ml-fundamentals/01_ml_theory_fundamentals.ipynb) |
 | 01 | Feature Engineering & Visualisation | Explore the Titanic dataset, visualise patterns, train a baseline model, and engineer new features to improve it. | [`labs/01-feature-engineering/lab_features_guided.ipynb`](labs/01-feature-engineering/lab_features_guided.ipynb) |
 | 02 | Classical Methods | Train your first classifier with scikit-learn: fit a decision tree, see how it makes decisions, and use it to predict on unseen data. | [`labs/02-classical-methods/lab_decision_tree_guided.ipynb`](labs/02-classical-methods/lab_decision_tree_guided.ipynb) |
 | 03 | Deep Learning | Build intuition for how a neural network is defined, trained, and debugged by classifying handwritten MNIST digits with PyTorch. | [`labs/03-deep-learning/lab_mnist_guided.ipynb`](labs/03-deep-learning/lab_mnist_guided.ipynb) |
+| 04 | FastAPI | Train a scikit-learn model and serve predictions through a FastAPI app with uvicorn. | [`labs/04-fastapi/`](labs/04-fastapi/) |
+| 06 | MLOps | Track experiments with MLflow, serve models, and monitor data drift with Evidently. | [`labs/06-mlops/01_mlops_mlflow_pipeline.ipynb`](labs/06-mlops/01_mlops_mlflow_pipeline.ipynb) |
 
 ### Lab 00 - ML Fundamentals
 
-Walk through the core machine-learning concepts you need before building models,
-using the classic Iris dataset:
+Walk through core machine-learning theory using the classic Iris dataset:
 
 - Features (`X`), labels (`y`), and predictions (`ŷ`)
 - Train / validation / test splits and why shuffling matters
-- Hyperparameter tuning, over/underfitting, and the bias-variance trade-off
+- Hyperparameter tuning with grid search and Bayesian optimization
+- Overfitting, underfitting, and the bias–variance trade-off
 - Confusion matrix and classification metrics (accuracy, precision, recall, F1)
 
-Built with `scikit-learn`, `pandas`, `matplotlib`, and `seaborn`. The dataset is
-included with `scikit-learn`, no download required.
+Built with `scikit-learn`, `scikit-optimize`, `pandas`, `matplotlib`, and `seaborn`.
+The dataset is included with `scikit-learn`, no download required.
+
+### Lab 04 - FastAPI
+
+Train a model with scikit-learn and expose it as a REST API:
+
+1. Run `training.py` to fit and persist the model
+2. Start the API with `uvicorn main:app --host 0.0.0.0 --port 8000`
+3. Send prediction requests to the `/predict` endpoint
+
+See [`labs/04-fastapi/README.md`](labs/04-fastapi/README.md) for details.
+
+### Lab 06 - MLOps
+
+End-to-end MLOps workflow with MLflow and Evidently:
+
+- Log experiments, parameters, and metrics with MLflow
+- Register and serve a model from the `wine_classifier` project
+- Generate drift reports and launch the Evidently monitoring UI
+
+Built with `mlflow`, `evidently`, and `scikit-learn`. MLflow UI runs on port **5050**,
+model serving on **5001**, and Evidently UI on **8080** when using Docker.
 
 ### Lab 01 - Feature Engineering & Visualisation
 
@@ -80,7 +103,7 @@ No installation needed, just click a link below, then run the cells top to
 bottom. Colab already includes all required packages.
 
 - **Lab 00 - ML Fundamentals:**
-  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/00-ml-fundamentals/lab_ml_fundamentals_guided.ipynb)
+  [Open in Colab](https://colab.research.google.com/github/ML-Bootcamp/ML-Bootcamp/blob/main/2026-mlcon-munich/labs/00-ml-fundamentals/01_ml_theory_fundamentals.ipynb)
 - **Lab 01 - Feature Engineering & Visualisation:**
   [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/01-feature-engineering/lab_features_guided.ipynb)
 - **Lab 02 - Classical Methods:**
@@ -156,7 +179,7 @@ docker build -t mlcon26-labs .
    saved back to your machine:
 
 ```bash
-docker run -it --rm -v "$(pwd)":/app -p 8888:8888 mlcon26-labs
+docker run -it --rm -v "$(pwd)":/app -p 8888:8888 -p 8000:8000 -p 5050:5050 -p 5001:5001 -p 8080:8080 mlcon26-labs
 ```
 
 3. Open the JupyterLab URL printed in the terminal (it includes a login token,
