@@ -13,7 +13,7 @@ go. No prior ML experience is required.
 | 02 | Classical Methods | Train your first classifier with scikit-learn: fit a decision tree, see how it makes decisions, and use it to predict on unseen data. | [`labs/02-classical-methods/lab_decision_tree_guided.ipynb`](labs/02-classical-methods/lab_decision_tree_guided.ipynb) |
 | 03 | Deep Learning | Build intuition for how a neural network is defined, trained, and debugged by classifying handwritten MNIST digits with PyTorch. | [`labs/03-deep-learning/lab_mnist_guided.ipynb`](labs/03-deep-learning/lab_mnist_guided.ipynb) |
 | 04 | FastAPI | Train a scikit-learn model and serve predictions through a FastAPI app with uvicorn. | [`labs/04-fastapi/`](labs/04-fastapi/) |
-| 06 | MLOps | Track experiments with MLflow, serve models, and monitor data drift with Evidently. | [`labs/06-mlops/01_mlops_mlflow_pipeline.ipynb`](labs/06-mlops/01_mlops_mlflow_pipeline.ipynb) |
+| 05 | MLOps | Track experiments with MLflow, serve models, and monitor data drift with Evidently. | [`labs/05-mlops/01_mlops_mlflow_pipeline.ipynb`](labs/05-mlops/01_mlops_mlflow_pipeline.ipynb) |
 
 ### Lab 00 - ML Fundamentals
 
@@ -38,7 +38,7 @@ Train a model with scikit-learn and expose it as a REST API:
 
 See [`labs/04-fastapi/README.md`](labs/04-fastapi/README.md) for details.
 
-### Lab 06 - MLOps
+### Lab 05 - MLOps
 
 End-to-end MLOps workflow with MLflow and Evidently:
 
@@ -179,7 +179,7 @@ docker build -t mlcon26-labs .
    saved back to your machine:
 
 ```bash
-docker run -it --rm -v "$(pwd)":/app -p 8888:8888 -p 8000:8000 -p 5050:5050 -p 5001:5001 -p 8080:8080 mlcon26-labs
+docker run -it --rm -v "$(pwd)":/app -p 8888:8888 mlcon26-labs
 ```
 
 3. Open the JupyterLab URL printed in the terminal (it includes a login token,

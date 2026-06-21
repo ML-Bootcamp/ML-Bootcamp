@@ -1,26 +1,13 @@
 # Core
-jupyterlab
-ipykernel
-nbformat
-nbconvert
+jupyter
 numpy
 pandas
 matplotlib
 
-# Labs 00-02: fundamentals, feature engineering, classical methods
+# Lab 01 - Feature engineering & visualisation
 seaborn
 scikit-learn
-scikit-optimize
 
-# Lab 03: deep learning
+# Lab 02 - Deep learning
 torch
 torchvision
-
-# Lab 04: FastAPI serving
-fastapi
-uvicorn
-python-multipart
-
-# Lab 06: MLOps
-mlflow>=2.10
-evidently>=0.7
