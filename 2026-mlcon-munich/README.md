@@ -28,27 +28,6 @@ Walk through core machine-learning theory using the classic Iris dataset:
 Built with `scikit-learn`, `scikit-optimize`, `pandas`, `matplotlib`, and `seaborn`.
 The dataset is included with `scikit-learn`, no download required.
 
-### Lab 04 - FastAPI
-
-Train a model with scikit-learn and expose it as a REST API:
-
-1. Run `training.py` to fit and persist the model
-2. Start the API with `uvicorn main:app --host 0.0.0.0 --port 8000`
-3. Send prediction requests to the `/predict` endpoint
-
-See [`labs/04-fastapi/README.md`](labs/04-fastapi/README.md) for details.
-
-### Lab 05 - MLOps
-
-End-to-end MLOps workflow with MLflow and Evidently:
-
-- Log experiments, parameters, and metrics with MLflow
-- Register and serve a model from the `wine_classifier` project
-- Generate drift reports and launch the Evidently monitoring UI
-
-Built with `mlflow`, `evidently`, and `scikit-learn`. MLflow UI runs on port **5050**,
-model serving on **5001**, and Evidently UI on **8080** when using Docker.
-
 ### Lab 01 - Feature Engineering & Visualisation
 
 Work through a complete ML workflow on the Titanic dataset:
@@ -90,6 +69,27 @@ learning models work in practice:
 Built with `PyTorch` (`torch`, `torchvision`), `numpy`, and `matplotlib`. The
 MNIST dataset is downloaded automatically by `torchvision` on first run.
 
+### Lab 04 - FastAPI
+
+Train a model with scikit-learn and expose it as a REST API:
+
+1. Run `training.py` to fit and persist the model
+2. Start the API with `uvicorn main:app --host 0.0.0.0 --port 8000`
+3. Send prediction requests to the `/predict` endpoint
+
+See [`labs/04-fastapi/README.md`](labs/04-fastapi/README.md) for details.
+
+### Lab 05 - MLOps
+
+End-to-end MLOps workflow with MLflow and Evidently:
+
+- Log experiments, parameters, and metrics with MLflow
+- Register and serve a model from the `wine_classifier` project
+- Generate drift reports and launch the Evidently monitoring UI
+
+Built with `mlflow`, `evidently`, and `scikit-learn`. MLflow UI runs on port **5050**,
+model serving on **5001**, and Evidently UI on **8080** when using Docker.
+
 ---
 
 ## How to run the labs
@@ -105,11 +105,11 @@ bottom. Colab already includes all required packages.
 - **Lab 00 - ML Fundamentals:**
   [Open in Colab](https://colab.research.google.com/github/ML-Bootcamp/ML-Bootcamp/blob/main/2026-mlcon-munich/labs/00-ml-fundamentals/01_ml_theory_fundamentals.ipynb)
 - **Lab 01 - Feature Engineering & Visualisation:**
-  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/01-feature-engineering/lab_features_guided.ipynb)
+  [Open in Colab](https://colab.research.google.com/github/ML-Bootcamp/ML-Bootcamp/blob/main/2026-mlcon-munich/labs/01-feature-engineering/lab_features_guided.ipynb)
 - **Lab 02 - Classical Methods:**
-  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/02-classical-methods/lab_decision_tree_guided.ipynb)
+  [Open in Colab](https://colab.research.google.com/github/ML-Bootcamp/ML-Bootcamp/blob/main/2026-mlcon-munich/labs/02-classical-methods/lab_decision_tree_guided.ipynb)
 - **Lab 03 - Deep Learning:**
-  [Open in Colab](https://colab.research.google.com/github/davencyw/mlcon26-mlbootcamp-labs/blob/main/labs/03-deep-learning/lab_mnist_guided.ipynb)
+  [Open in Colab](https://colab.research.google.com/github/ML-Bootcamp/ML-Bootcamp/blob/main/2026-mlcon-munich/labs/03-deep-learning/lab_mnist_guided.ipynb)
 
 To open any notebook in Colab manually, prefix its GitHub URL with
 `https://colab.research.google.com/github/`. Changes in Colab are not saved back
@@ -127,8 +127,8 @@ GitHub.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/davencyw/mlcon26-mlbootcamp-labs.git
-cd mlcon26-mlbootcamp-labs
+git clone https://github.com/ML-Bootcamp/ML-Bootcamp.git
+cd ML-Bootcamp/2026-mlcon-munich
 ```
 
 2. Create and activate a virtual environment:
