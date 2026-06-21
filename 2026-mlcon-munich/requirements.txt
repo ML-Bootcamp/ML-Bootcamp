@@ -11,19 +11,12 @@ matplotlib
 seaborn
 scikit-learn
 
-# Guided lab 03 + extended neural networks / transfer learning
+# Guided lab 03
 torch
 torchvision
-tensorflow
-torchsummary
 
-# Extended: ML Theory (Bayesian hyperparameter tuning)
+# Extended: ML Foundations (Bayesian hyperparameter tuning)
 scikit-optimize
-
-# Extended: FastAPI serving lab
-fastapi
-uvicorn
-python-multipart
 
 # Extended: MLOps lab
 mlflow>=2.10
