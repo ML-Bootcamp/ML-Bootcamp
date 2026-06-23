@@ -15,6 +15,7 @@ scikit-optimize
 # Lab 03: deep learning
 torch
 torchvision
+torchsummary
 
 # Lab 04: FastAPI serving
 fastapi
