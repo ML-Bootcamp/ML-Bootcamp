@@ -17,6 +17,9 @@ torch
 torchvision
 torchsummary
 
+# Lab 06: transfer learning (HEIC/iPhone photos)
+pillow-heif
+
 # Lab 04: FastAPI serving
 fastapi
 uvicorn
